@@ -84,8 +84,8 @@ if uploaded_file is not None:
                     fig,ax=plt.subplots()
                     ax.plot(timeline['time'],timeline['message'],color='#25D366')
                     plt.xticks(rotation='vertical')
-                    plt.grid(True,linewidth=0.2)
-                    x_ticks = np.linspace(0, 10, 5) 
+                    # plt.grid(True,linewidth=0.2)
+                    # x_ticks = np.linspace(0, 10, 5) 
                     plt.xticks(x_ticks)
                     st.pyplot(fig)
     
