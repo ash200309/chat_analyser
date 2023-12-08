@@ -84,9 +84,7 @@ if uploaded_file is not None:
                     fig,ax=plt.subplots()
                     ax.plot(timeline['time'],timeline['message'],color='#25D366')
                     plt.xticks(rotation='vertical')
-                    # plt.grid(True,linewidth=0.2)
-                    # x_ticks = np.linspace(0, 10, 5) 
-                    plt.xticks(x_ticks)
+                    plt.grid(True,linewidth=0.1)
                     st.pyplot(fig)
     
                 #Daily timeline
@@ -96,7 +94,7 @@ if uploaded_file is not None:
                     fig,ax=plt.subplots()
                     ax.plot(daily_timeline['only_date'],daily_timeline['message'],color='#25D366')
                     plt.xticks(rotation='vertical')
-                    plt.grid(True,linewidth=0.2)
+                    plt.grid(True,linewidth=0.1)
                     st.pyplot(fig)
     
                 st.markdown("<hr>", unsafe_allow_html=True)
