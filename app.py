@@ -2,8 +2,7 @@ import streamlit as st
 import preprocesser,helper
 import matplotlib.pyplot as plt
 
-st.sidebar.markdown("Web App by **[Ansh Arora](https://www.linkedin.com/in/ansh-arora-1648a4226/)**")
-st.sidebar.markdown("<hr>", unsafe_allow_html=True)
+
 st.sidebar.title("Choose a .txt file")
 uploaded_file = st.sidebar.file_uploader("Select a whatsapp chat and click on export, then upload it here.")
 
@@ -196,5 +195,7 @@ if uploaded_file is not None:
                     mime='text/csv',
                     help="Download the formatted chat as a CSV file",
                     )
+    st.sidebar.markdown("<hr>", unsafe_allow_html=True)
+    st.sidebar.markdown("Web App by **[Ansh Arora](https://www.linkedin.com/in/ansh-arora-1648a4226/)**")
     except:
         st.markdown('<h4 style="text-align: center; color: red">{}</h4>'.format("There seems to be an error, try uploading the file with correct format."), unsafe_allow_html=True)
