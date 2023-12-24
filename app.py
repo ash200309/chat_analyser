@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 st.sidebar.title("Choose a .txt file")
 uploaded_file = st.sidebar.file_uploader("Select a whatsapp chat and click on export, then upload it here.")
 
-if uploaded_file is None:
-    st.sidebar.write("This app doesn't store or read your chats. So, you can upload them safely.")
 st.markdown('<h1 style="text-align: center; color: #128C7E;">{}</h1>'.format("WhatsApp Chat Analyzer"), unsafe_allow_html=True)
 
 if uploaded_file is None:
@@ -198,4 +196,5 @@ if uploaded_file is not None:
     except:
         st.markdown('<h4 style="text-align: center; color: red">{}</h4>'.format("There seems to be an error, try uploading the file with correct format."), unsafe_allow_html=True)
 st.sidebar.markdown("<hr>", unsafe_allow_html=True)
+st.sidebar.write("This app doesn't store or read your chats. So, you can upload them safely.")
 st.sidebar.markdown("Web App by **[Ansh Arora](https://www.linkedin.com/in/ansh-arora-1648a4226/)**")
