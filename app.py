@@ -3,6 +3,7 @@ import preprocesser,helper
 import matplotlib.pyplot as plt
 
 st.sidebar.markdown("Web App by **[Ansh Arora](https://www.linkedin.com/in/ansh-arora-1648a4226/)**")
+st.markdown("<hr>", unsafe_allow_html=True)
 st.sidebar.title("Choose a .txt file")
 uploaded_file = st.sidebar.file_uploader("Select a whatsapp chat and click on export, then upload it here.")
 
