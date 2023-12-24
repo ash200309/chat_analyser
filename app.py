@@ -13,10 +13,11 @@ if uploaded_file is None:
 st.markdown("<hr>", unsafe_allow_html=True)
 
 if uploaded_file is not None:
-    bytes_data = uploaded_file.getvalue()
-    data = bytes_data.decode("utf-8")
-
+    
     try:
+        bytes_data = uploaded_file.getvalue()
+        data = bytes_data.decode("utf-8")
+        
         df = preprocesser.preprocess(data)
     
         # fetch unique users
@@ -157,12 +158,14 @@ if uploaded_file is not None:
                 st.markdown('<h2 style="text-align: center; color:#128C7E;">{}</h2>'.format("Emoji Analysis"), unsafe_allow_html=True)
                     
                 col1,col2 = st.columns(2)
-    
+
+                # DF
                 with col1:
                     st.markdown('<h3 style="text-align: center; color: #DCF8C6;">{}</h3>'.format("Emoji count"), unsafe_allow_html=True)
                     st.dataframe(emoji_df)
+                    
+                # Users that use the most emojis  
                 with col2:
-                # Users that use the most emojis
                     if selected_user=="Overall":
                         st.markdown('<h3 style="text-align: center; color:#DCF8C6;">{}</h3>'.format("Users that use the emojis most"), unsafe_allow_html=True)
                         df['emoji_count']=df['message'].apply(helper.most_emoji_user)
