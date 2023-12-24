@@ -2,13 +2,12 @@ import streamlit as st
 import preprocesser,helper
 import matplotlib.pyplot as plt
 
-
+st.sidebar.markdown("Web App by **[Ansh Arora](https://www.linkedin.com/in/ansh-arora-1648a4226/)**")
 st.sidebar.title("Choose a .txt file")
 uploaded_file = st.sidebar.file_uploader("Select a whatsapp chat and click on export, then upload it here.")
 
 if uploaded_file is None:
     st.sidebar.write("This app doesn't store or read your chats. So, you can upload them safely.")
-    st.sidebar.markdown("Web App by **[Ansh Arora](https://www.linkedin.com/in/ansh-arora-1648a4226/)**")
 st.markdown('<h1 style="text-align: center; color: #128C7E;">{}</h1>'.format("WhatsApp Chat Analyzer"), unsafe_allow_html=True)
 
 if uploaded_file is None:
