@@ -67,19 +67,6 @@ def most_used_words(selected_user,df):
     
     return df_1,df_wc
 
-# def monthly_timeline(selected_user,df):
-
-#     if selected_user!="Overall":
-#         df=df[df['user']==selected_user]
-
-#     timeline= df.groupby(['year','month','month_num']).count()['message'].reset_index()
-    
-#     time=[]
-#     for i in range(timeline.shape[0]):
-#         time.append(timeline['month'][i]+", "+ str(timeline['year'][i]))
-#     timeline['time']=time
-#     return timeline
-
 def monthly_timeline(selected_user,df):
 
     if selected_user != 'Overall':
