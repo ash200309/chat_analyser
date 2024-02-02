@@ -81,7 +81,7 @@ if uploaded_file is not None:
                     timeline=helper.monthly_timeline(selected_user,df)
                     fig,ax=plt.subplots()
                     ax.plot(timeline['time'],timeline['message'],color='#25D366')
-                    plt.xticks(ticks=range(0,, 2), rotation=90)
+                    plt.xticks(ticks=range(0,30, 2), rotation=90)
                     plt.grid(True,linewidth=0.2)
                     st.pyplot(fig)
     
