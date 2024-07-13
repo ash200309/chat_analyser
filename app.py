@@ -171,7 +171,7 @@ if uploaded_file is not None:
                         df['emoji_count']=df['message'].apply(helper.most_emoji_user)
                         user_emoji_count = df.groupby('user')['emoji_count'].sum()
                         user_emoji_count=user_emoji_count[user_emoji_count['emoji_count']>0].sort_values("emoji_count",ascending=False)
-                        st.dataframe(user_emoji_count.reset_index())    
+                        st.dataframe(user_emoji_count)    
                 st.markdown("<hr>", unsafe_allow_html=True)
 
                 if selected_user == 'Overall':
