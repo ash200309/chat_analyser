@@ -170,7 +170,8 @@ if uploaded_file is not None:
                         st.markdown('<h3 style="text-align: center; color:#DCF8C6;">{}</h3>'.format("Users that use the emojis most"), unsafe_allow_html=True)
                         df['emoji_count']=df['message'].apply(helper.most_emoji_user)
                         user_emoji_count = df.groupby('user')['emoji_count'].sum()
-                        st.dataframe(user_emoji_count[user_emoji_count['emoji_count']>0].sort_values("emoji_count",ascending=False).reset_index())    
+                        user_emoji_count[user_emoji_count['emoji_count']>0].sort_values("emoji_count",ascending=False,inplace=True)
+                        st.dataframe(user_emoji_count.reset_index())    
                 st.markdown("<hr>", unsafe_allow_html=True)
 
                 if selected_user == 'Overall':
