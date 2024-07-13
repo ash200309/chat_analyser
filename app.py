@@ -131,7 +131,7 @@ if uploaded_file is not None:
                         plt.xticks(rotation='vertical')
                         st.pyplot(fig)
                     with col2:
-                        st.dataframe(new_df)
+                        st.dataframe(new_df,hide_index=True)
                     st.markdown("<hr>", unsafe_allow_html=True)
     
                 #Word cloud
@@ -162,17 +162,16 @@ if uploaded_file is not None:
                 # DF
                 with col1:
                     st.markdown('<h3 style="text-align: center; color: #DCF8C6;">{}</h3>'.format("Emoji count"), unsafe_allow_html=True)
-                    st.dataframe(emoji_df)
+                    st.dataframe(emoji_df,hide_index=True)
                     
                 # Users that use the most emojis  
                 with col2:
                     if selected_user=="Overall":
                         st.markdown('<h3 style="text-align: center; color:#DCF8C6;">{}</h3>'.format("Users who use emojis the most"), unsafe_allow_html=True)
                         df['emoji_count']=df['message'].apply(helper.most_emoji_user)
-                        user_emoji_count = df.groupby('user')['emoji_count'].sum()
+                        user_emoji_count = df.groupby('user')['emoji_count'].sum().reset_index()
                         user_emoji_count=user_emoji_count[user_emoji_count['emoji_count']>0].sort_values("emoji_count",ascending=False)
-                        st.dataframe(user_emoji_count)    
-                st.markdown("<hr>", unsafe_allow_html=True)
+                        st.dataframe(user_emoji_count,hide_index=True)   
 
                 if selected_user == 'Overall':
                     temp_df=df[['date','user','message']]
